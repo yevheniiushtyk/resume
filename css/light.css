@@ -1,0 +1,330 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #f0f0f0 25%, #ffffff 100%);
+    position: relative;
+}
+
+.resume {
+    width: 210mm;
+    height: 297mm;
+    padding: 20px;
+    margin: auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 2;
+}
+
+.background-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 150, 136, 0.1);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.shape1 {
+    width: 300px;
+    height: 300px;
+    top: 50px;
+    left: -150px;
+    animation: float1 6s ease-in-out infinite;
+}
+
+.shape2 {
+    width: 200px;
+    height: 200px;
+    bottom: 100px;
+    right: -100px;
+    animation: float2 8s ease-in-out infinite;
+}
+
+.shape3 {
+    width: 150px;
+    height: 150px;
+    top: 200px;
+    right: 50px;
+    animation: float3 7s ease-in-out infinite;
+}
+
+.shape4 {
+    width: 250px;
+    height: 250px;
+    bottom: 50px;
+    left: -125px;
+    animation: float4 9s ease-in-out infinite;
+}
+
+@keyframes float1 {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes float2 {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25px);
+    }
+}
+
+@keyframes float3 {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes float4 {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-30px);
+    }
+}
+
+.left-column {
+    width: 35%;
+    padding-right: 20px;
+    box-sizing: border-box;
+    border-right: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.right-column {
+    width: 65%;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.header {
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.header h1 {
+    margin: 0 0 20px 0;
+    font-size: 24px;
+    color: #000;
+}
+
+.header .avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto 10px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact {
+    z-index: 2;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.contact p {
+    font-size: 16px;
+    color: #000;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.contact i {
+    margin-right: 8px;
+    font-size: 20px;
+}
+
+.contact a {
+    color: #000;
+    text-decoration: none;
+}
+
+.contact a:hover {
+    text-decoration: underline;
+}
+
+.section {
+    margin-bottom: 20px;
+    z-index: 2;
+    position: relative;
+}
+
+.section h2 {
+    border-bottom: 2px solid #000;
+    padding-bottom: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: #000;
+}
+
+.section.skills-section h2 {
+    margin-top: 20px;
+}
+
+.section h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #000;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #000;
+}
+
+.section .education-item,
+.section .experience-item {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.section .education-item .field {
+    font-weight: bold;
+}
+
+.section .education-item .years,
+.section .experience-item .years {
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+    margin-top: 5px;
+    color: #000;
+}
+
+.section .education-item .qualification,
+.section .experience-item .company {
+    font-weight: normal;
+    font-size: 16px;
+    color: #000;
+    margin-left: 5px;
+}
+
+.section .experience-item .company {
+    color: #000;
+    font-size: 18px;
+    margin-top: 5px;
+    display: inline;
+}
+
+.company a {
+    color: #000;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.company a:hover {
+    text-decoration: underline;
+}
+
+.company a i {
+    margin-left: 5px;
+}
+
+.section ul.skills,
+.section ul.languages {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 5px 0 0;
+}
+
+.section ul.experience {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin: 5px 0 0;
+    text-align: left;
+}
+
+.section ul li {
+    margin-bottom: 10px;
+    color: #000;
+}
+
+.skill-name,
+.language-name {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.skill-level,
+.language-level {
+    width: 100%;
+}
+
+.language-item {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.language-item .language-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.language-item .language-info span {
+    margin-right: 5px;
+}
+
+progress {
+    width: 100%;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+progress::-webkit-progress-value {
+    background-color: #329932;
+}
+
+progress::-moz-progress-bar {
+    background-color: #329932;
+}
+
+.flag-icon {
+    height: 17px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
