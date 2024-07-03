@@ -260,6 +260,11 @@ body {
     margin-left: 5px;
 }
 
+#company-name, #project-link {
+    display: inline-block;
+    padding: 0 10px;
+}
+
 .section ul.skills,
 .section ul.languages {
     list-style-type: none;
