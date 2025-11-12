@@ -1,8 +1,8 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Inter', 'Helvetica Neue', sans-serif;
     margin: 0;
     padding: 0;
-    background: linear-gradient(135deg, #f0f0f0 25%, #ffffff 100%);
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
     position: relative;
 }
 
@@ -11,12 +11,13 @@ body {
     height: 297mm;
     padding: 20px;
     margin: auto;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #ffffff 0%, #fefefe 100%);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08), 0 0 1px rgba(0, 0, 0, 0.05);
     display: flex;
     box-sizing: border-box;
     position: relative;
     z-index: 2;
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .background-shapes {
@@ -33,9 +34,10 @@ body {
 .shape {
     position: absolute;
     border-radius: 50%;
-    background: rgba(0, 150, 136, 0.1);
+    background: radial-gradient(circle, rgba(99, 102, 241, 0.12) 0%, rgba(236, 72, 153, 0.08) 50%, transparent 70%);
     z-index: 1;
     pointer-events: none;
+    filter: blur(40px);
 }
 
 .shape1 {
@@ -118,8 +120,12 @@ body {
     width: 35%;
     padding-right: 20px;
     box-sizing: border-box;
-    border-right: 1px solid #ddd;
+    border-right: 2px solid transparent;
+    background: linear-gradient(#fff, #fff) padding-box, linear-gradient(180deg, rgba(99, 102, 241, 0.3), rgba(236, 72, 153, 0.3)) border-box;
     padding-top: 20px;
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
 }
 
 .right-column {
@@ -136,8 +142,13 @@ body {
 
 .header h1 {
     margin: 0 0 20px 0;
-    font-size: 24px;
-    color: #000;
+    font-size: 26px;
+    font-weight: 700;
+    background: linear-gradient(135deg, #6366f1 0%, #ec4899 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
 }
 
 .header .avatar {
@@ -146,7 +157,14 @@ body {
     border-radius: 50%;
     display: block;
     margin: 0 auto 10px;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 30px rgba(99, 102, 241, 0.3), 0 0 60px rgba(236, 72, 153, 0.15);
+    border: 2px solid rgba(99, 102, 241, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.header .avatar:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.4), 0 0 80px rgba(236, 72, 153, 0.25);
 }
 
 .contact {
@@ -170,12 +188,15 @@ body {
 }
 
 .contact a {
-    color: #000;
+    color: #6366f1;
     text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
 }
 
 .contact a:hover {
-    text-decoration: underline;
+    color: #ec4899;
+    text-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
 }
 
 .section {
@@ -185,12 +206,17 @@ body {
 }
 
 .section h2 {
-    border-bottom: 2px solid #000;
-    padding-bottom: 5px;
+    border-bottom: 2px solid transparent;
+    background: linear-gradient(90deg, rgba(99, 102, 241, 0.6) 0%, rgba(236, 72, 153, 0.6) 100%) 0 100% / 100% 2px no-repeat;
+    padding-bottom: 8px;
     margin-top: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     font-size: 20px;
-    color: #000;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 18px;
 }
 
 .section.skills-section h2 {
@@ -208,7 +234,8 @@ body {
 .section p {
     margin: 5px 0;
     font-size: 16px;
-    color: #000;
+    color: rgba(0, 0, 0, 0.85);
+    line-height: 1.6;
 }
 
 .section .education-item,
@@ -246,13 +273,16 @@ body {
 }
 
 .company a {
-    color: #000;
+    color: #6366f1;
     text-decoration: none;
     display: inline-block;
+    transition: all 0.3s ease;
 }
 
 .company a:hover {
-    text-decoration: underline;
+    color: #ec4899;
+    text-shadow: 0 0 10px rgba(236, 72, 153, 0.3);
+    transform: translateX(2px);
 }
 
 .company a i {
@@ -311,21 +341,28 @@ body {
 
 progress {
     width: 100%;
-    height: 10px;
-    border-radius: 5px;
+    height: 12px;
+    border-radius: 6px;
     overflow: hidden;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 progress::-webkit-progress-bar {
-    background: rgba(0, 0, 0, 0.1);
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: 6px;
 }
 
 progress::-webkit-progress-value {
-    background-color: #329932;
+    background: linear-gradient(90deg, #6366f1 0%, #ec4899 100%);
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
+    transition: width 1s ease;
 }
 
 progress::-moz-progress-bar {
-    background-color: #329932;
+    background: linear-gradient(90deg, #6366f1 0%, #ec4899 100%);
+    border-radius: 6px;
+    box-shadow: 0 0 10px rgba(99, 102, 241, 0.3);
 }
 
 .flag-icon {
